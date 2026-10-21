@@ -3,42 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 1 - Corporate Landing Page</title>
-    <!-- This links your HTML skeleton to your style.css layout file -->
+    <title>Responsive Tech Showcase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">My Portfolio Website</div>
+
+    <!-- Semantic Header -->
+    <header class="navbar">
+        <div class="logo">FlexiTech</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section class="hero-banner">
-            <h2>Welcome to My Week 1 Project</h2>
-            <p>I am converting a wireframe layout into a static web page using semantic HTML and CSS.</p>
-            <button class="cta-btn">Learn More</button>
-        </section>
-        <section class="content-container">
-            <!-- Left Column (Main Article) -->
-            <article class="main-article">
-                <h3>Main Feature Content</h3>
-                <p>This is the left column. In a wireframe, this section holds the primary reading material, blog text, or main product descriptions.</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Design for Every Screen</h1>
+            <p>Experience seamless, fluid layouts built using modern CSS Grid and Flexbox mechanics.</p>
+            <button class="btn">Explore Now</button>
+        </div>
+    </section>
+
+    <!-- Main Content: Fluid Feature Grid -->
+    <main class="container">
+        <h2 class="section-title">Our Featured Services</h2>
+        <div class="responsive-grid">
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="UI/UX Design Concept" class="fluid-img">
+                </div>
+                <h3>UI/UX Architecture</h3>
+                <p>Crafting intuitive digital interfaces designed to engage users across mobile and desktop displays effortlessly.</p>
             </article>
-            <aside class="sidebar">
-                <h3>Sidebar Links</h3>
-                <p>This is the right column. It acts as a sidebar for secondary information, quick links, or extra widgets.</p>
-            </aside>
-        </section>
+
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="Web Development Environment" class="fluid-img">
+                </div>
+                <h3>Frontend Development</h3>
+                <p>Deploying highly optimized clean code utilizing standard components and seamless layout shifts.</p>
+            </article>
+
+            <article class="card">
+                <div class="card-image-wrapper">
+                    <img src="https://unsplash.com" alt="Analytics and Strategy" class="fluid-img">
+                </div>
+                <h3>Digital Optimization</h3>
+                <p>Scaling websites for search engine visibility, fast asset load times, and perfect structural performance.</p>
+            </article>
+        </div>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Deepthi | Built for YuvaIntern Week 1 Assessment.</p>
+        <p>&copy; 2026 FlexiTech Ecosystems. All rights reserved.</p>
     </footer>
 
 </body>
