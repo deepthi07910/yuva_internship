@@ -3,77 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Workspace | YUVA Web Intern</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Optimized & Accessible Portfolio | Professional Frontend Engineering</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header class="app-header">
-        <div class="brand">YUVA<span>Core</span></div>
-        <nav class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#contact">Join Now</a>
-        </nav>
-        <button id="mode-switcher" class="theme-btn" aria-label="Toggle visual theme">
-            <span class="icon"></span> Dark Mode
-        </button>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation Landmark -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#" aria-label="Company Home Developer Hub">DevHub</a>
+            </div>
+            <nav aria-label="Primary Site Navigation Links">
+                <ul class="nav-menu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="content-wrapper">
-        <!-- Hero Concept Block -->
-        <section class="hero-block">
-            <h1>Dynamic Interface Architecture</h1>
-            <p>Explore native DOM manipulation, advanced event delegation models, and state-preserving dark mode configurations using vanilla enterprise JavaScript scripts.</p>
-        </section>
-
+    <!-- Main Content Container Landmark -->
+    <main id="main-content" tabindex="-1">
         
-        <section id="features" class="interactive-section">
-            <h2>Interactive Modules</h2>
-            <div class="tabs-container">
-                <div class="tab-controls" id="tab-buttons">
-                    <button class="tab-btn active" data-target="dom-panel">DOM Manipulation</button>
-                    <button class="tab-btn" data-target="events-panel">Event Delegation</button>
-                    <button class="tab-btn" data-target="storage-panel">State Storage</button>
-                </div>
-                <div class="tab-content" id="tab-panels">
-                    <div class="panel active" id="dom-panel">
-                        <h3>Native Dynamic Interactivity</h3>
-                        <p>Updating, changing, and animating individual elements immediately upon click triggers using programmatic document references without structural layout shift.</p>
-                    </div>
-                    <div class="panel" id="events-panel">
-                        <h3>Optimized Event Bubbling</h3>
-                        <p>Attaching structural listeners to singular parent wrappers instead of injecting tracking arrays to every individual button, minimizing application runtime overhead.</p>
-                    </div>
-                    <div class="panel" id="storage-panel">
-                        <h3>Persistent Client Cache</h3>
-                        <p>Saving user preferences locally across sessions directly through web API containers, bypassing the requirement for backend authentication handshakes.</p>
-                    </div>
+        <!-- Hero Section Section -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="section-container">
+                <h1 id="hero-title" class="primary-heading">Building Fast, Accessible Digital Experiences</h1>
+                <p class="hero-lead">An optimized frontend architecture framework engineered to meet Google Lighthouse performance indices and WCAG 2.1 AA digital inclusivity metrics.</p>
+                <div class="cta-actions">
+                    <a href="#features" class="btn btn-primary" role="button">Explore Features</a>
                 </div>
             </div>
         </section>
 
-     
-        <section id="contact" class="form-section">
-            <h2>Access Cohort Ecosystem</h2>
-            <form id="async-form" novalidate>
-                <div class="input-wrapper">
-                    <label for="user-fullname">Full Name</label>
-                    <input type="text" id="user-fullname" placeholder="Enter full name">
-                    <span class="validation-feedback" id="name-feedback"></span>
+        <!-- Features Showcase Section -->
+        <section id="features" class="features-section" aria-labelledby="features-title">
+            <div class="section-container">
+                <h2 id="features-title" class="section-heading">Core Performance Metrics</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h3>Optimized Speed</h3>
+                        <p>Leveraging high-performance WebP compression, mini-bundles, and critical rendering path delivery pipelines.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">👁️</div>
+                        <h3>Universal Design</h3>
+                        <p>Fully compliant with accessibility mandates for seamless parsing across all modern screen readers.</p>
+                    </article>
                 </div>
-                
-                <div class="input-wrapper">
-                    <label for="user-email">Email Coordinate</label>
-                    <input type="email" id="user-email" placeholder="name@domain.com">
-                    <span class="validation-feedback" id="email-feedback"></span>
+            </div>
+        </section>
+        <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+            <div class="section-container">
+                <h2 id="gallery-title" class="section-heading">Modern Image Optimization Showcase</h2>
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                   
+                        <picture>
+                            <source srcset="images/project-one.webp" type="image/webp">
+                            <img src="images/project-one.jpg" alt="Minimalist dashboard interface displaying responsive operational data charts" width="600" height="400" loading="lazy">
+                        </picture>
+                        <figcaption>Responsive Dashboard Analytics Module</figcaption>
+                    </figure>
                 </div>
-
-                <button type="submit" class="action-btn">Register Application</button>
-                <div id="form-toast" class="toast-notification"></div>
-            </form>
+            </div>
+        </section>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="section-container">
+                <h2 id="contact-title" class="section-heading">Connect With Our Team</h2>
+                <form action="#" method="POST" class="accessible-form">
+                    <div class="form-group">
+                        <label for="username">Full Professional Name <span class="required" aria-hidden="true">*</span></label>
+                        <input type="text" id="username" name="username" required aria-required="true" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="useremail">Corporate Email Address <span class="required" aria-hidden="true">*</span></label>
+                        <input type="email" id="useremail" name="useremail" required aria-required="true" autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit Verified Secure Payload</button>
+                </form>
+            </div>
         </section>
     </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Developer Hub Core Engineering Modules. Distributed under standard MIT Licensing frameworks.</p>
+        </div>
+    </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
+
