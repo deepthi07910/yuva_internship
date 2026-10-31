@@ -1,207 +1,85 @@
-/* Custom Variable Token System for WCAG AA Text Contrast Compliance */
 :root {
-    --primary-brand: #1f4e79;
-    --primary-dark: #2b2b2b;
-    --background-light: #ffffff;
-    --accent-blue: #2e74b5;
-    --text-muted: #4a4a4a;
-    --focus-ring: #ffbf47;
-    --font-stack: 'Calibri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --bg-primary: #f8fafc;
+    --surface: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #2563eb;
+    --border: #e2e8f0;
 }
 
-*, *::before, *::after {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    font-family: var(--font-stack);
-    font-size: 16px;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
     line-height: 1.6;
-    color: var(--primary-dark);
-    background-color: var(--background-light);
 }
 
-/* Accessible Skip Navigation Configuration */
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    background: var(--accent-blue);
-    color: white;
-    padding: 12px 24px;
-    z-index: 1000;
-    transition: top 0.2s ease;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.skip-link:focus {
-    top: 0;
-    outline: 3px solid var(--focus-ring);
-}
-
-/* Globally Standardized Visible Focus States for Fluid Keyboard Browsing */
-a:focus, button:focus, input:focus {
-    outline: 3px solid var(--focus-ring);
-    outline-offset: 2px;
-}
-
-/* Structured Structural Header & Menu Components */
-.site-header {
-    background-color: var(--primary-brand);
-    padding: 15px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-container {
-    max-width: 1100px;
-    margin: 0 auto;
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    background-color: var(--surface);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
 }
 
-.logo a {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--accent);
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu li {
-    margin-left: 20px;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 10px;
-    transition: opacity 0.2s ease;
-}
-
-.nav-menu a:hover {
-    text-decoration: underline;
-    opacity: 0.9;
-}
-
-/* Core Responsive Content Frameworks */
-.section-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.primary-heading {
-    font-size: 36px;
-    color: var(--primary-brand);
-    margin-bottom: 20px;
-}
-
-.hero-lead {
-    font-size: 18px;
+.nav-links a {
     color: var(--text-muted);
-    margin-bottom: 30px;
-    max-width: 800px;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-/* Universal Button Layouts */
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.view-fade {
+    animation: renderEffect 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes renderEffect {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
+    background: var(--accent);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 4px;
-    cursor: pointer;
-    border: none;
+    margin-top: 1rem;
+    font-weight: 500;
 }
-
-.btn-primary {
-    background-color: var(--accent-blue);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-brand);
-}
-
-/* Performance Features Grid (Flexbox/Grid Implementations) */
-.features-grid {
-    display: flex;
-    gap: 20px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.feature-card {
-    flex: 1;
-    min-width: 280px;
-    padding: 30px;
-    background: #f8f9fa;
-    border-radius: 6px;
-    border-left: 4px solid var(--accent-blue);
-}
-
-.feature-card h3 {
-    margin: 15px 0 10px 0;
-    color: var(--primary-brand);
-}
-
-/* Media Showcase Elements */
-.gallery-grid img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    display: block;
-}
-
-/* High-Contrast Accessible Form Frameworks */
-.accessible-form {
-    max-width: 500px;
-    margin-top: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: var(--primary-dark);
-}
-
-.form-group input {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid var(--text-muted);
-    border-radius: 4px;
-}
-
-.btn-submit {
-    background-color: var(--primary-brand);
-    color: white;
-    width: 100%;
-}
-
-/* Document Footer */
-.site-footer {
-    background-color: var(--primary-dark);
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-    font-size: 14px;
-}
-
